@@ -3,6 +3,7 @@ import React from "react";
 import { Pedometer } from "expo";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { When, Unless } from './conditionals';
+import Magotchi from './magotchi';
 
 export default class PedometerSensor extends React.Component {
   state = {
@@ -64,12 +65,16 @@ export default class PedometerSensor extends React.Component {
       <View style={styles.container}>
         <Text style={styles.heading}>Walk! And your Nerdmagotchi will evolve!</Text>
         <Text>Current steps: {this.state.currentStepCount}</Text>
-        <When condition={this.state.currentStepCount > 20}>
+        <Magotchi 
+          stepCount={this.state.currentStepCount}
+        />
+
+        {/* <When condition={this.state.currentStepCount > 20}>
             <Text>You're step count is greater than 20!</Text>
             <Image
               source={require('./assets/images/floppy.png')}
             />
-        </When>
+        </When> */}
         <When condition={this.state.currentStepCount > 30}>
             <Text>You're step count is greater than 30!</Text>
             <Image
