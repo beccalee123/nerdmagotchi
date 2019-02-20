@@ -2,7 +2,6 @@ import Expo from "expo";
 import React from "react";
 import { Pedometer } from "expo";
 import { StyleSheet, Text, View, Image } from "react-native";
-import { When, Unless } from './conditionals';
 import Magotchi from './magotchi';
 
 export default class PedometerSensor extends React.Component {
@@ -22,9 +21,7 @@ export default class PedometerSensor extends React.Component {
 
   _subscribe = () => {
     this._subscription = Pedometer.watchStepCount(result => {
-      this.setState({
-        currentStepCount: result.steps
-      });
+        this.setState({ currentStepCount: result.steps });
     });
 
     Pedometer.isAvailableAsync().then(
@@ -68,31 +65,6 @@ export default class PedometerSensor extends React.Component {
         <Magotchi 
           stepCount={this.state.currentStepCount}
         />
-
-        {/* <When condition={this.state.currentStepCount > 20}>
-            <Text>You're step count is greater than 20!</Text>
-            <Image
-              source={require('./assets/images/floppy.png')}
-            />
-        </When>
-        <When condition={this.state.currentStepCount > 30}>
-            <Text>You're step count is greater than 30!</Text>
-            <Image
-              source={require('./assets/images/cdrom.png')}
-            />
-        </When>
-        <When condition={this.state.currentStepCount > 40}>
-            <Text>You're step count is greater than 40!</Text>
-            <Image
-              source={require('./assets/images/thumbdrive.png')}
-            />
-        </When>
-        <When condition={this.state.currentStepCount > 50}>
-            <Text>You're step count is greater than 50!</Text>
-            <Image
-              source={require('./assets/images/thecloud.png')}
-            />
-        </When> */}
       </View>
     );
   }
