@@ -74,7 +74,7 @@ export default class PedometerSensor extends React.Component {
             <Image
               source={require('./assets/images/floppy.png')}
             />
-        </When> */}
+        </When>
         <When condition={this.state.currentStepCount > 30}>
             <Text>You're step count is greater than 30!</Text>
             <Image
@@ -92,7 +92,7 @@ export default class PedometerSensor extends React.Component {
             <Image
               source={require('./assets/images/thecloud.png')}
             />
-        </When>
+        </When> */}
       </View>
     );
   }
