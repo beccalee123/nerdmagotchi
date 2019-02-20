@@ -30,12 +30,30 @@ export default class Magotchi extends React.Component {
             this.setState({image: evolveArray[this.state.stage]});
             this.state.stage + 1;
         }
-        this.setState({canEvolve: false});
+        if(this.props.stepCount >= 10){
+            this.setState({image: evolveArray[1]})
+        }
+        if(this.props.stepCount >= 20){
+            this.setState({image: evolveArray[2]})
+        }
+        if(this.props.stepCount >= 30){
+            this.setState({image: evolveArray[3]})
+        }
+        if(this.props.stepCount >= 40){
+            this.setState({image: evolveArray[4]})
+        }
+        if(this.props.stepCount >= 50){
+            this.setState({image: evolveArray[5]})
+        }
+        if(this.props.stepCount >= 60){
+            this.setState({image: evolveArray[6]})
+        }
+        // this.setState({canEvolve: false});
     }
 
-    pet = () => {
-        //write function to pet
-    }
+    // pet = () => {
+    //     //write function to pet
+    // }
 
     componentDidMount() {
         this.idleMove();
@@ -68,13 +86,13 @@ export default class Magotchi extends React.Component {
                         />
                     </Then>
                     <Else>
-                        <Text>Start walking to get an egg!</Text>
+                        <Text>Push evolve to get an egg!</Text>
                     </Else>
                 </If>
                 <When condition={this.state.canEvolve}>
                         <Button title="Evolve" onPress={this.evolve}>WOWZA!</Button>
                 </When>
-                    <Button title="Pet" onPress={this.pet}>Pet!</Button>
+                    {/* <Button title="Pet" onPress={this.pet}>Pet!</Button> */}
             </View>
         )
     }
