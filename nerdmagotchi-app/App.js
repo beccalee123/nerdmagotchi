@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Animated } from 'react-native';
 import PedometerSensor from './components/pedometer';
+import Animation from './animation.js';
 // import {Font} from 'expo';
 // import Nanum from './components/assets/fonts/font.js';
 
@@ -10,7 +11,7 @@ export default class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      fontLoaded: false
+      fontLoaded: false,
     }
   }
 
@@ -19,7 +20,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
    
         <Text>NERDMAGOTCHI!!!</Text>
-      
+        <Animation />
         <PedometerSensor />
       </View>
     );
