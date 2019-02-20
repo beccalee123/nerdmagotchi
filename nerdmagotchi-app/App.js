@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 import PedometerSensor from './components/pedometer';
 // import {Font} from 'expo';
 // import Nanum from './components/assets/fonts/font.js';
@@ -17,9 +17,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-   
         <Text>NERDMAGOTCHI!!!</Text>
-      
         <PedometerSensor />
       </View>
     );
